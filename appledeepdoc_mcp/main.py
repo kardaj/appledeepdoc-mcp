@@ -4,8 +4,8 @@ Main entry point for Xcode Documentation MCP Server.
 """
 
 import sys
-from config import logger
-from tools import mcp
+from .config import logger
+from .tools import mcp
 
 
 def main():

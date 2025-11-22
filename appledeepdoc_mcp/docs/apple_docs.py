@@ -26,7 +26,7 @@ import urllib.request
 import urllib.parse
 import time
 from typing import Dict, Optional, List
-from config import logger
+from ..config import logger
 
 class AppleDocsAPI:
     """

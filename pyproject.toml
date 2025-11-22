@@ -23,3 +23,16 @@ classifiers = [
 dependencies = [
     "fastmcp>=0.1.0",
 ]
+[project.scripts]
+appledeepdoc = "appledeepdoc_mcp.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["appledeepdoc_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "appledeepdoc_mcp",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]

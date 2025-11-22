@@ -25,7 +25,7 @@ Architecture:
 import re
 from pathlib import Path
 from typing import List, Dict, Optional
-from config import Config, logger
+from ..config import Config, logger
 
 class LocalDocsManager:
     """

@@ -18,17 +18,17 @@ while this file focuses on MCP interface definition and input sanitization.
 
 from typing import Dict, List, Optional
 from fastmcp import FastMCP
-from config import Config
+from .config import Config
 
 # Import specialized modules - each handles a specific documentation source
 # These modules are designed to be independent and maintainable
-from docs.local_docs import local_docs      # Xcode's hidden local documentation
-from docs.apple_docs import apple_docs      # Apple Developer website API access
-from evolution.swift_evolution import evolution  # Swift language evolution tracking
-from repos.swift_repos import swift_repos   # GitHub repository searching
-from wwdc.wwdc_notes import wwdc_notes      # WWDC session notes and transcripts
-from design.human_interface_guidelines import human_interface_guidelines  # Human Interface Guidelines
-from suggestions.suggestions import suggestion_engine   # Centralized suggestion system
+from .docs.local_docs import local_docs      # Xcode's hidden local documentation
+from .docs.apple_docs import apple_docs      # Apple Developer website API access
+from .evolution.swift_evolution import evolution  # Swift language evolution tracking
+from .repos.swift_repos import swift_repos   # GitHub repository searching
+from .wwdc.wwdc_notes import wwdc_notes      # WWDC session notes and transcripts
+from .design.human_interface_guidelines import human_interface_guidelines  # Human Interface Guidelines
+from .suggestions.suggestions import suggestion_engine   # Centralized suggestion system
 
 # Initialize the FastMCP server with configuration
 mcp = FastMCP(Config.SERVER_NAME)

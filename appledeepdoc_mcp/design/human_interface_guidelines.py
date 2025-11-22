@@ -22,7 +22,7 @@ Technical Details:
 
 import urllib.parse
 from typing import Dict, Optional, List
-from config import logger
+from ..config import logger
 
 
 class HumanInterfaceGuidelines:

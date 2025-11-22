@@ -3,9 +3,16 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# Use venv python if available, otherwise system python
-if [ -f ./venv/bin/python ]; then
-    ./venv/bin/python main.py
+# Use virtualenv Python if available, otherwise system Python
+if [ -x ./.venv/bin/python ]; then
+    PYTHON_BIN="./.venv/bin/python"
+elif [ -x ./venv/bin/python ]; then
+    PYTHON_BIN="./venv/bin/python"
 else
-    python3 main.py
+    PYTHON_BIN="python3"
 fi
+
+# Ensure repository root is on PYTHONPATH for the in-repo package
+export PYTHONPATH="${SCRIPT_DIR}${PYTHONPATH:+:${PYTHONPATH}}"
+
+exec "$PYTHON_BIN" -m appledeepdoc_mcp.main "$@"
